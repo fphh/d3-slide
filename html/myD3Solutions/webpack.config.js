@@ -3,7 +3,7 @@ module.exports = {
     entry: "./solutions.js",
     output: {
         path: __dirname,
-        filename: "bundle.js",
+        filename: "bundle.max.js",
     },
     module: {
         loaders: [

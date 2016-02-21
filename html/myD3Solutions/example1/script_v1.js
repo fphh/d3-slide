@@ -28,9 +28,4 @@ window.ex1v1 = function ex1v1() {
 	.attr("cy", centerY)
 	.attr("r", function (d) { return d; })
 	.style("fill", function (d, idx) { return color(idx); });
-
-
-    function translate(x, y) {
-	return "translate(" + x + ", " + y + ")";
-    }
 };
