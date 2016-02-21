@@ -1,0 +1,13 @@
+
+
+text {
+    font-family: verdana;
+    font-size: 36pt;
+    font-weight: bold;
+}
+
+rect {
+    stroke-width: 1px;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
