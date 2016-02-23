@@ -1,8 +1,11 @@
 
 
 body {
-    font: 16pt/24pt verdana, sans-serif;
+    font-family: verdana, sans-serif;
+    font-size: 16pt;
+    line-height: 24pt;
 }
+
 
 #app {
     width: 640px;
@@ -90,7 +93,6 @@ body {
     font-weight: bold;
     color: #aa0000;
 }
-
 
 .word::after {
     content: " ";
