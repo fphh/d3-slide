@@ -23,5 +23,23 @@
       selection();
     </script>
 
+    <h2>Selektionen und Transitionen</h2>
+    <ol style="width:600px">
+      <li>Definieren Sie sich ein Array aus Buchstaben als Daten.</li>
+      <li>Erzeugen Sie zunächst das Ausgangsbild mit Hilfe der <em>enter</em>-Selektion wie gewohnt. Um gemeinsame verschieben der Elemente zu ermöglichen, werden Sie das Gruppenelement benötigen.</li>
+      <li>Ersetzen Sie Ihr Daten-Array durch ein anderes Array. Dabei können Buchstaben verschwinden, hinzukommen oder Ihre Position ändern. Damit die Buchstaben weiterhin identifiziert werden können, sollten Sie eine <em>key</em>-Funktion im Aufruf von <em>data</em> verwenden. Diese Funktion müssen Sie natürlich auch beim ersten Aufruf schon mitübergeben.</li>
+      <li>Schreiben Sie Funktionen <em>enter</em>, <em>update</em>, <em>enterAndUpdate</em> und <em>exit</em>, die die jeweiligen Selektionen behandeln. Verzichten Sie zunächst einmal auf Transitionen.</li>
+
+      <li>Rufen sie Ihre Funkionen nach einander mit Hilfe von <em>setTimeout</em> auf.</li>
+      <li>Beachten Sie, dass die Reihenfolge der Aufrufe maßgeblich ist.</li>
+      <li>Fügen Sie jetzt Transitionen ein, um eine Animation zu erhalten</li>
+    </ol>
+
+    <div style="width:600px">
+    Als zusätzliche Übung können sie einen Button definieren,
+    der es ermöglicht, das Array mit den Buchstaben dynamisch zu erzeugen.
+    Im Anschluß soll jeweils die Animation abgespielt werden.
+    </div>
+
   </body>
 <html>
