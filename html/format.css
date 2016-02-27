@@ -1,7 +1,7 @@
 
 
 body {
-    font: 16pt/24pt verdana, sans-serif !important;
+    font: 16pt/24pt verdana, sans-serif;
 }
 
 #app {
@@ -115,7 +115,6 @@ body {
 }
 
 .word {
-    font-size: 16pt !important;
 }
 
 
