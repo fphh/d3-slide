@@ -78,9 +78,10 @@ window.ex2v3 = function ex2v3 () {
 	.attr("class", "bar")
 	.attr("x", function(d) { return x(d.cocktail); })
 	.attr("width", x.rangeBand())
-	.attr("y", function(d) { return height-y(d.number); })
-	.attr("height", function(d) { return y(d.number); });
-
+	.attr("y", height)
+	.attr("height", 0)
+	.attr("y", function(d) { return y(d.number); })
+	.attr("height", function(d) { return height - y(d.number); });
 
 
     var dur = 1000;
@@ -89,7 +90,6 @@ window.ex2v3 = function ex2v3 () {
 
 	var newData = updateData();
 	x.domain(newData.map(key));
-
 
 	var bars = inner
 	    .selectAll(".bar")
