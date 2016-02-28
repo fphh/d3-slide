@@ -114,6 +114,7 @@ window.selection = function selection() {
     }
 
 
+
     setTimeout(update, 2000);
     setTimeout(exit, 4000);
     setTimeout(enterAndUpdate, 6000);
@@ -126,4 +127,5 @@ window.selection = function selection() {
       setTimeout(enterAndUpdate, 6000);
       setTimeout(exit, 8000);
     */
+
 };

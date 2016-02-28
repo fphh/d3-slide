@@ -95,6 +95,7 @@ window.ex2v3 = function ex2v3 () {
 	    .selectAll(".bar")
 	    .data(newData, key);
 
+
 	var t0 = d3.transition().duration(dur).each(function () {
 	    bars.exit()
 		.transition()
@@ -102,8 +103,6 @@ window.ex2v3 = function ex2v3 () {
 		.attr("height", 0)
 		.remove();
 	});
-
-
 
 	var t1 = t0.transition().duration(dur).each(function () {
 	    inner.select(".x.axis").call(xAxis);
