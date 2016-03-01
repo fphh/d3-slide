@@ -1,6 +1,6 @@
 
 
-window.colorsV1 = function stocksV1 () {
+window.colorsV1 = function colorsV1 () {
 
     var height = 260;
     var width = 1000;
