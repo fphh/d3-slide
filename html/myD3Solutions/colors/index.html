@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>D3</title>
+    <script language="javascript" src="../d3/d3.min.js"></script>
+
+    <link rel="stylesheet" href="format.css" />
+  </head>
+  <body>
+    <h1>Mehrteilige Graphik mit Farbskala</h1>
+
+    <div id="app">
+
+      <form style="margin-left:800px;margin-top:20px">
+	<input type="button" value="Update Data" onclick="colorV1Update()">
+      </form>
+
+    </div>
+
+    <div style="width:600px">
+
+      <p>Dieses Chart besteht aus, verschiedenen Elementen. Identifizieren Sie die Elemente und legen Sie sie entsprechend im SVG an. Positionieren Sie die Elemente mit <em>transform</em>. Vergessen Sie den Rand nicht.</p>
+
+      <p>
+	Beginnen Sie mit der Farbskala (Einheit Prozent):
+      </p>
+
+      <ol>
+	<li>Definieren Sie ein Array von Objekten, die die Property <em>percent</em> und <em>color</em> besitzen. </li>
+	<li>Benutzen Sie <em>d3.scale.linear()</em>, um aus diesem Array eine Skala mit <em>domain</em> und <em>range</em> zu erzeugen.</li>
+	<li>Testen Sie die Skala in der Konsole. Zu jedem von Ihnen vorgegebenen Prozentsatz sollte genau die definierte Farbe zurückgegeben werden. Dazwischen sollten interpolierte Farben zurückgegeben werden. Wenn in der Array-Definition zweimal die selbe Farbe aufeinander folgt, dann entsteht ein Band mit konstanter Farbe.</li>
+	<li>Erzeugen Sie mit <em>d3.range</em> die Prozente von 0 bis 100.</li>
+	<li>Selektieren Sie alle Rechtecke und weisen Sie das Array mit den Prozentzahlen als Daten zu. Zeichnen Sie die Rechtecke bündig, so dass ein Farbverlauf entsteht, indem Sie <em>fill</em> mit Ihrer Farbskala berechnen.</li>
+	<li>Zeichne Sie die x-Achse erst nach den Rechtecken. So verdecken Sie Artefakte durch Anti-Aliasing am unteren Rand. Mit <em>tickValues</em> könne Sie die zu zeichnenden Tick-Lables explizit vorgeben. Mit <em>tickFormat</em> können Sie die labels vor dem Zeichnen bearbeiten. Beachten Sie dass hinter der 100 das Prozent-Zeichen steht.</li>
+      </ol>
+
+      <p>
+	Das Daten-Array für das Chart wurden durch einen eindimensionalen <a href="https://de.wikipedia.org/wiki/Random_Walk" target="_blank">Random-Walk</a> erzeugt, dessen Werte auf das Interval [0,1] normiert wurden. Es empfiehlt sich, zum erzeugen der Daten eine eigene Funktion zu implementieren. Der Bequemlichkeit halber können Sie auch einfach einen Sinus oder Cosinus benutzen, um Werte zwischen 0 und 1 zu erzeugen (denken Sie an <em>Math.sin(), Math.cos(), Math.abs()</em>).
+      </p>
+
+      <p>
+	Das Chart:
+      </p>
+
+      <ol>
+	<li>Zeichnen Sie auch die y-Achse. Wenn Sie Achsen-Labels haben möchten, müssen Sie diese extra als <em>text</em> einfügen. <em>d3.js</em>-Achsen haben hierfür keine spezielle Funktionalität. Für das Grid setzen Sie <em>outerTickSize</em> auf 0 und <em>innerTickSize</em> auf <em>-chartWidth</em>.
+	</li>
+	<li>Die Ticks können Sie über den css-Selector ".tick line" stylen. Setzen Sie z.B. "opacity" auf 0.2.
+	<li>
+	  Falls Sie die Ticks noch weiter bearbeiten möchten, müssen Sie auf <em>d3.selectAll("g.y.axis g.tick line")</em> zurückgreifen und sie händisch anpassen.
+	</li>
+
+	<li>Das Chart zeichnen Sie genauso wie die Farbskala.</li>
+
+	<li>Fügen Sie den Tooltip als Gruppenelement ein.</li>
+	<li>Legen Sie über ihr gesamtes Chart ein Rechteck, dess <em>fill</em> Sie auf <em>transparent</em> setzen. Implementieren Sie die <em>mousemove</em>- und <em>mouseout</em>-Events, die Tooltip-Gruppe sichtbar/unsichtbar werden lassen, den Text setzen und an der richtigen Stelle positionieren.</li>
+      </ol>
+
+    </div>
+
+    <script language="javascript" src="script.js"></script>
+
+    <script>
+      colorsV1();
+    </script>
+
+  </body>
+<html>
