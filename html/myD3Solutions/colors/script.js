@@ -189,7 +189,7 @@ window.colorsV1 = function colorsV1 () {
 
 
     window.colorV1Update = function update() {
-	var dur = 1000;
+	var dur = 1200;
 
 	es = updateData();
 
@@ -201,7 +201,8 @@ window.colorsV1 = function colorsV1 () {
 	    .selectAll("rect")
 	    .data(es)
 	    .transition()
-	    .duration(1000)
+	    //.duration(1000)
+	    .delay(function(d, i) { return i / dataPoints * dur; })
 	    .attr("x", function (d, idx) { return xscale2(idx); })
 	    .attr("y", function (d) {
 		return mapHeight-mapHeight*d;
