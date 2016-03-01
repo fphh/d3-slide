@@ -37,7 +37,7 @@
       </ol>
 
       <p>
-	Das Daten-Array für das Chart wurden durch einen eindimensionalen <a href="https://de.wikipedia.org/wiki/Random_Walk" target="_blank">Random-Walk</a> erzeugt, dessen Werte auf das Interval [0,1] normiert wurden. Es empfiehlt sich, zum erzeugen der Daten eine eigene Funktion zu implementieren. Der Bequemlichkeit halber können Sie auch einfach einen Sinus oder Cosinus benutzen, um Werte zwischen 0 und 1 zu erzeugen (denken Sie an <em>Math.sin(), Math.cos(), Math.abs()</em>).
+	Das Daten-Array für das Chart wurden durch einen eindimensionalen <a target="_blank" href="https://de.wikipedia.org/wiki/Random_Walk">Random-Walk</a> erzeugt, dessen Werte auf das Interval [0,1] normiert wurden. Es empfiehlt sich, zum erzeugen der Daten eine eigene Funktion zu implementieren. Der Bequemlichkeit halber können Sie auch einfach einen Sinus oder Cosinus benutzen, um Werte zwischen 0 und 1 zu erzeugen (denken Sie an <em>Math.sin(), Math.cos(), Math.abs()</em>).
       </p>
 
       <p>
@@ -58,6 +58,17 @@
 	<li>Legen Sie über ihr gesamtes Chart ein Rechteck, dess <em>fill</em> Sie auf <em>transparent</em> setzen. Implementieren Sie die <em>mousemove</em>- und <em>mouseout</em>-Events, die Tooltip-Gruppe sichtbar/unsichtbar werden lassen, den Text setzen und an der richtigen Stelle positionieren.</li>
       </ol>
 
+      <p>
+	Beim Clicken des update-Buttons generieren sie neue Daten und binden die Daten an die Selektion der Rechtecke. Dann arbeiten Sie auf der update-Selektion und passen Höhe und Farbe der Rechtecke an. Hier können Sie eine Transition verwenden.
+      </p>
+
+      <p>
+	Wenn Sie möchten, können Sie die Transition auch in zwei aufeinanderfolgende Transitionen aufspalten. Z.B. könnten Sie zuerst die Farbe und dann die Höhe anpassen oder umgekehrt (mit <em>d3.transition()</em> erzeugen Sie eine Transition, dann leiten Sie davon eine zweite Transition ab).
+      </p>
+
+      <p>
+	Probieren Sie auch die Funktion <a target="_blank" href="https://github.com/mbostock/d3/wiki/Transitions#delay">delay()</a> und passen Sie Ihre Elemente nacheinander an.
+      </p>
     </div>
 
 <!--
