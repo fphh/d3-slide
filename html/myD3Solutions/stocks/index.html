@@ -32,6 +32,56 @@
 
     </div>
 
+    <div style="width:600px">
+
+      <ol>
+	<li>Definieren Sie Höhe, Breite und Randabstand Ihrer Graphik.</li>
+	<li>Definieren Sie ein SVG mit <em>defs</em>-Abschnitt und einem inneren Gruppenelement, das um die Randbreite nach innen verschoben ist. So stellen Sie sicher, dass Sie um Ihre Graphik herum immer genug Platz haben. Alle übrigen Elemente Ihrer fügen Sie in dieses Element ein.</li>
+
+	<li>Im <em>defs</em>-Abschnitt definieren Sie eine rechteckigen Clip-Path, der genau die Größe Ihres Charts hat. Berechnen Sie die Größe mittels der Variablen für Höhe, Breite und Randabstand.</li>
+
+	<li>Legen Sie eine Zeitachse für die x-Richtung und eine lineare Achse für die y-Richtung an. Da Sie noch keine Daten haben, können Sie <em>domain()</em> noch nicht angeben. Speichern Sie das Gruppenelement der jeweiligen Achse in einer Variable.</li>
+
+	<li>Legen Sie das <em>path</em>-Element an, das die Kurve darstellt. Setzen Sie das <em>clip-path</em>-Attribut.</li>
+
+	<li>Lesen Sie mit <em>d3.csv()</em> die Daten ein und bringen Sie sie in eine geeignete Form.</li>
+
+	<li>Implementieren Sie für <em>d3.csv()</em> eine Callback-Funktion, die als zweites Argument das Array mit den Daten bekommt (das erste Argument ist für eventuelle Fehler reserviert):</li>
+
+	<li>Erzeugen Sie mit <em>d3.svg.line()</em> eine Linienfunktion und speichern sie diese in einer Variable.</li>
+
+      </ol>
+
+      Die Callback-Funktion soll folgendes bewerkstelligen:
+
+      <ol>
+	<li>Lassen Sie sich die Daten auf der Konsole ausgeben.</li>
+	
+	<li>Speichern sie die Daten in einer Variable im lexikalisch darüberliegenden Scope.</li>
+
+	<li>Berechnen Sie für <em>x</em> und <em>y</em> den kleinsten und größten Wert. Benutzen Sie hierfür <em>d3.extent()</em>. Speichern Sie die Werte in lexikalisch darüberliegenden Scope.
+	</li>
+
+	<li>
+	  Setzen sie die Definitionsbereiche der Achsen und lassen Sie sie neu zeichnen (die Achsen-Selektion haben Sie bereits in einer Variable gespeichtert).
+	</li>
+
+	<li>Setzen rufen Sie die <em>x</em>- und <em>y</em>-Methoden Ihrer Linienfunktion auf. Übergeben sie geeignete Funktionen.</li>
+
+	<li>Setzen Sie mit Hilfe der Linienfunktion das <em>d</em>-Attribut Ihres <em>path</em>-Elements.</li>
+
+      </ol>
+   
+      <p>
+	Implementieren Sie eine <em>update</em>-Funktion. Die Funktion nimmt als Parameter einen Zeitbereich (z.B. ein Jahr) und berechnet und setzt den Definitionsbereich der Skalen neu. Dannach werden die Achsen neu gezeichnet und das <em>d</em>-Attribut des Pfades neu gesetzt. Experimentieren Sie mit Transitionen.
+      </p>
+
+      <p>
+	Wichtig ist, dass die originalen Daten in Takt bleiben. Der Pfad wird jeweils über die gesamte Dauer gezeichnet. Der Clip-Path sorgt dafür, dass er nur im Abschnitt des Charts sichtbar ist.
+      </p>
+
+    </div>
+
     <script language="javascript" src="script.js"></script>
 
     <script>
