@@ -53,7 +53,6 @@ window.ex1v2 = function ex1v2 () {
 
     circles.on("mouseenter", function (d) {
 	var evt = d3.mouse(this);
-	console.log(evt);
 	var x = evt[0];
 	var y = evt[1];
 	var n = 4;
