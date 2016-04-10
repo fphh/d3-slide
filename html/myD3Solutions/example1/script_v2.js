@@ -19,12 +19,6 @@ window.ex1v2 = function ex1v2 () {
 	.attr("width", 800)
 	.attr("height", 600);
 
-    var backgroundRect = svg
-	.append("rect")
-	.attr("width", "100%")
-	.attr("height", "100%")
-	.attr("fill", "transparent");
-
     var circles = svg.selectAll("circle")
 	.data(rs)
 	.enter()
@@ -55,12 +49,14 @@ window.ex1v2 = function ex1v2 () {
 	.append("text")
 	.style("fill", "#000000");
 
+    var offset = 20;
+
     circles.on("mouseenter", function (d) {
 	var evt = d3.mouse(this);
+	console.log(evt);
 	var x = evt[0];
 	var y = evt[1];
 	var n = 4;
-	var offset = 20;
 
 	text.text(d);
 
@@ -77,17 +73,19 @@ window.ex1v2 = function ex1v2 () {
 
     });
 
+    circles.on("mousemove", function (d) {
+	var evt = d3.mouse(this);
+	var x = evt[0];
+	var y = evt[1];
+
+	tooltip
+	    .attr("transform", translate(x+offset, y-offset))
+	    .style("opacity", 1);
+    });
+
     circles.on("mouseleave", function (d) {
 	tooltip
 	    .style("opacity", 0);
     });
 
-    tooltip.on("mouseenter", function () {
-	tooltip.style("opacity", 1);
-    });
-
-    backgroundRect.on("mouseenter", function () {
-	tooltip.style("opacity", 0)
-	    .attr("transform", translate(-100, -100));
-    });
 };
