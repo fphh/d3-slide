@@ -78,6 +78,8 @@ window.ex1v3 = function ex1v3 () {
 	.append("text")
 	.style("fill", "#000000");
 
+    var offset = 20;
+
     circles.on("mouseenter", function (d, idx) {
 	var evt = d3.mouse(this);
 	var x = evt[0];
@@ -94,8 +96,8 @@ window.ex1v3 = function ex1v3 () {
 	    .attr("height", bbox.height+n*2);
 
 	tooltip
-	    .style("opacity", 1)
-	    .attr("transform", translate(x+20, y-20));
+	    .attr("transform", translate(x+offset, y-offset))
+	    .style("opacity", 1);
 
 	var rInner = rs[idx+1] ?
 	    rs[idx+1] + markerCircleWidth
@@ -112,18 +114,17 @@ window.ex1v3 = function ex1v3 () {
 	markerCirclesGroup.style("opacity", 1);
     });
 
+    circles.on("mousemove", function (d) {
+        var evt = d3.mouse(this);
+        var x = evt[0];
+        var y = evt[1];
+
+        tooltip
+            .attr("transform", translate(x+offset, y-offset));
+    });
+
     circles.on("mouseleave", function (d) {
-	tooltip.style("opacity", 0);
-	markerCirclesGroup.style("opacity", 0);
-    });
-
-    tooltip.on("mouseenter", function () {
-	tooltip.style("opacity", 1);
-	markerCirclesGroup.style("opacity", 1);
-    });
-
-    backgroundRect.on("mouseenter", function () {
-	tooltip.style("opacity", 0);
+        tooltip.style("opacity", 0);
 	markerCirclesGroup.style("opacity", 0);
     });
 

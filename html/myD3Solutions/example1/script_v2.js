@@ -78,8 +78,7 @@ window.ex1v2 = function ex1v2 () {
 	var y = evt[1];
 
 	tooltip
-	    .attr("transform", translate(x+offset, y-offset))
-	    .style("opacity", 1);
+	    .attr("transform", translate(x+offset, y-offset));
     });
 
     circles.on("mouseleave", function (d) {
